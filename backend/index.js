@@ -3,7 +3,7 @@ import connectDB from "./db/connect.js";
 import User from "./models/user.model.js";
 import userRoutes from "./routes/user.routes.js";
 import teamRoutes from "./routes/team.routes.js";
-import data from "./userData.json" assert { type: "json" };
+// import data from "./userData.json" assert { type: "json" };
 
 const app = express();
 app.use(express.json());
