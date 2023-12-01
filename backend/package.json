@@ -5,8 +5,8 @@
   },
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon index.js"
-  
+    "dev": "nodemon index.js",
+    "vercel-build": "echo hello"
   },
   "dependencies": {
     "dotenv": "^16.3.1",
