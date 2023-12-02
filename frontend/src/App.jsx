@@ -8,7 +8,7 @@ import {
 import Sidebar from "./components/Sidebar";
 import Profile from "./components/Profile";
 import Users from "./pages/Users";
-import Team from "./pages/team";
+import Team from "./pages/Team";
 
 const Layout = () => {
   return (
