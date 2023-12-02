@@ -1,4 +1,5 @@
 import User from "../models/user.model.js";
+import Team from "../models/team.model.js";
 
 export const createTeam = async (req, res) => {
   const { memberIds } = req.body;
@@ -13,6 +14,7 @@ export const createTeam = async (req, res) => {
       members: availableMembers,
       domains: uniqueDomains,
     };
+    await Team.create(team);
     return res.status(201).json(team);
   } catch (err) {
     return res.status(500).json({ msg: err });
@@ -22,7 +24,7 @@ export const createTeam = async (req, res) => {
 export const getTeamById = async (req, res) => {
   const { id } = req.params;
   try {
-    const team = await User.findbyId(id);
+    const team = await Team.findById(id).populate("members");
     res.status(200).json(team);
   } catch (err) {
     return res.status(500).json({ msg: err });
