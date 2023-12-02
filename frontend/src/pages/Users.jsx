@@ -19,7 +19,7 @@ const Users = () => {
   useEffect(() => {
     const getUsers = async () => {
       const response = await axios.get(
-        "hhttps://heliverse-assignment-production.up.railway.app/api/users"
+        "https://heliverse-assignment-production.up.railway.app/api/users"
       );
       const data = await response.data;
       setUsers(data.users);
