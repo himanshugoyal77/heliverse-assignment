@@ -13,9 +13,12 @@ const Profile = () => {
   console.log(teamMembers);
 
   const createTeam = async () => {
-    const response = await axios.post("http://localhost:4000/api/team/", {
-      memberIds: teamMembers.map((member) => member.id),
-    });
+    const response = await axios.post(
+      "https://heliverse-assignment-production.up.railway.app/api/team/",
+      {
+        memberIds: teamMembers.map((member) => member.id),
+      }
+    );
     const data = await response.data;
     console.log(data);
     if (response.status == 201) {
