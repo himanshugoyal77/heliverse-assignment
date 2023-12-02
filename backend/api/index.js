@@ -5,6 +5,8 @@ import userRoutes from "../routes/user.routes.js";
 import teamRoutes from "../routes/team.routes.js";
 // import data from "./userData.json" assert { type: "json" };
 
+const PORT = process.env.PORT || 3000;
+
 const app = express();
 app.use(express.json());
 
@@ -25,7 +27,7 @@ const uploadUsers = async () => {
   }
 };
 
-app.listen(3000, () => {
+app.listen(, () => {
   connectDB();
   console.log("Server is running on port 3000");
 });
