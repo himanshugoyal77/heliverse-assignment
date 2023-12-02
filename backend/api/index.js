@@ -3,14 +3,18 @@ import connectDB from "../db/connect.js";
 import User from "../models/user.model.js";
 import userRoutes from "../routes/user.routes.js";
 import teamRoutes from "../routes/team.routes.js";
+import cors from "cors";
 // import data from "./userData.json" assert { type: "json" };
 
 const PORT = process.env.PORT || 3000;
 
 const app = express();
 app.use(express.json());
+app.use(
+  cors({ origin: "heliverse-frontend-vite.vercel.app/", credentials: true })
+);
 
-app.get("/", (req, res) => {
+https: app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
