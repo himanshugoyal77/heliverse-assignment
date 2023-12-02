@@ -12,7 +12,7 @@ import Team from "./pages/Team";
 
 const Layout = () => {
   return (
-    <div className="flex items-center h-screen w-full">
+    <div className="flex items-center h-screen w-full overflow-y-hidden">
       <Sidebar />
       <Outlet />
       <Profile />
