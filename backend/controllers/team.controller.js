@@ -14,8 +14,8 @@ export const createTeam = async (req, res) => {
       members: availableMembers,
       domains: uniqueDomains,
     };
-    await Team.create(team);
-    return res.status(201).json(team);
+    const teamData = await Team.create(team);
+    return res.status(201).json(teamData);
   } catch (err) {
     return res.status(500).json({ msg: err });
   }
@@ -26,6 +26,15 @@ export const getTeamById = async (req, res) => {
   try {
     const team = await Team.findById(id).populate("members");
     res.status(200).json(team);
+  } catch (err) {
+    return res.status(500).json({ msg: err });
+  }
+};
+
+export const getTeams = async (req, res) => {
+  try {
+    const teams = await Team.find({}).populate("members");
+    res.status(200).json(teams);
   } catch (err) {
     return res.status(500).json({ msg: err });
   }

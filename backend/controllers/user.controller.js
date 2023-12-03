@@ -30,12 +30,13 @@ export const getAllUsers = async (req, res) => {
   const skip = (page - 1) * limit;
 
   try {
-    const allUsers = await User.find({});
+    const allUsers = await User.find(query);
     const users = await User.find(query).skip(skip).limit(limit);
     return res.send({
       users,
       page,
-      length: allUsers.length,
+      currLength: users.length,
+      totalLength: allUsers.length,
     });
   } catch (err) {
     return res.status(500).json({ msg: err });
